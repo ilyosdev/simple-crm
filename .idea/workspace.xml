@@ -150,11 +150,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604925639230</updated>
-      <workItem from="1604925640422" duration="441000" />
+      <workItem from="1604925640422" duration="672000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="741" y="433" key="ComposerInitDialogKey" timestamp="1604925798888">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="741" y="433" key="ComposerInitDialogKey/0.0.1920.1040/1920.316.1366.728@0.0.1920.1040" timestamp="1604925798888" />
   </component>
 </project>
