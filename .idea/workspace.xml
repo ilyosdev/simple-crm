@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="71ae136a-8885-411a-91be-e9e7e5286014" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/seed_data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/theme/custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/footer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/header.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/sidebar.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/styles.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/home/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/ContactDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContactDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/ContactEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContactEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/ContactPhone.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContactPhone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/ContactStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContactStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/Document.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Document.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/DocumentType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DocumentType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/Setting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Setting.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/Task.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Task.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/TaskDocument.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TaskDocument.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/TaskStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TaskStatus.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Models/TaskType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TaskType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +168,9 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Workspace\Openserver\domains\crm.dev\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Workspace\Openserver\domains\crm.dev\resources\views\layout" />
     </key>
@@ -187,7 +190,7 @@
       <option name="presentableId" value="Default" />
       <updated>1604925639230</updated>
       <workItem from="1604925640422" duration="672000" />
-      <workItem from="1604926870883" duration="2380000" />
+      <workItem from="1604926870883" duration="2877000" />
     </task>
     <servers />
   </component>
@@ -203,5 +206,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="795" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.316.1366.728@0.0.1920.1040" timestamp="1604928893018" />
+    <state x="670" y="231" width="579" height="578" key="find.popup" timestamp="1604929710971">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="670" y="231" width="579" height="578" key="find.popup/0.0.1920.1040/1920.316.1366.728@0.0.1920.1040" timestamp="1604929710971" />
   </component>
 </project>
