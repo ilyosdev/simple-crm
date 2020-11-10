@@ -4,6 +4,7 @@
 
     use Illuminate\Database\Seeder;
     use Illuminate\Support\Facades\DB;
+    use Illuminate\Support\Facades\Hash;
     use Spatie\Permission\Models\Permission;
 
     class DatabaseSeeder extends Seeder
@@ -60,9 +61,9 @@
             // insert sample user as the system admin
             DB::table('users')->insert([
                 'name'           => 'admin',
-                'email'          => 'admin@my-crm.com',
+                'email'          => 'admin@demo.com',
                 'position_title' => 'sales manager',
-                'password'       => '123456',
+                'password'       => Hash::make('123456'),
                 'is_admin'       => 1,
                 'is_active'      => 1
             ]);
