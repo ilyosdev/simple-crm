@@ -13,6 +13,12 @@
         Route::get('/my-profile/edit', 'App\Http\Controllers\UsersController@getEditProfile');
         Route::patch('/my-profile/edit', 'App\Http\Controllers\UsersController@postEditProfile');
 
+        Route::resource('/permissions', 'App\Http\Controllers\PermissionsController');
+
+        Route::resource('/roles', 'App\Http\Controllers\RolesController');
+        Route::get('/users/role/{id}', 'App\Http\Controllers\UsersController@getRole');
+        Route::put('/users/role/{id}', 'App\Http\Controllers\UsersController@updateRole');
+
         Route::get('/forbidden', function () {
             return view('pages.forbidden.forbidden_area');
         });

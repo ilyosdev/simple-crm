@@ -62,6 +62,7 @@
             'signed'           => \Illuminate\Routing\Middleware\ValidateSignature::class,
             'throttle'         => \Illuminate\Routing\Middleware\ThrottleRequests::class,
             'verified'         => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-            'admin'            => \App\Http\Middleware\Administrator::class           // administrator
+            'admin'            => \App\Http\Middleware\Administrator::class,           // administrator
+            'permission'       => \Spatie\Permission\Middlewares\PermissionMiddleware::class
         ];
     }

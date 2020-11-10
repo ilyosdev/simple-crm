@@ -3,7 +3,6 @@
     namespace App\Http\Controllers;
 
     use App\Helpers\MailerFactory;
-    use App\Http\Requests;
     use App\Models\User;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
@@ -232,4 +231,29 @@
 
             return redirect('admin/my-profile')->with('flash_message', 'Profile updated!');
         }
+
+//        roles
+        public function getRole($id)
+        {
+            $user = User::findOrFail($id);
+            $roles = Role::all();
+            return view('pages.users.role', compact('user', 'roles'));
+        }
+
+        public function updateRole(Request $request, $id)
+        {
+            $this->validate($request, [
+                'role_id' => 'required'
+            ]);
+            $user = User::findOrFail($id);
+            $old_roles = $user->roles();
+            $user->syncRoles($request->role_id);
+            // send role update notification
+            if (getSetting("enable_email_notification") == 1 && $old_roles->count() > 0 && is_array($old_roles) && $old_roles[0]->id != $request->role_id) {
+                // send notify email
+                $this->mailer->sendUpdateRoleEmail("Your mini crm account have updated role", $user);
+            }
+            return redirect('admin/users')->with('flash_message', 'Role updated!');
+        }
+
     }
