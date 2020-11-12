@@ -60,6 +60,46 @@
                 </li>
             @endif
 
+            @if(user_can('list_tasks'))
+                <li class="{{ Request::segment(2) == "tasks"?"active":"" }}">
+                    <a href="{{ url('/admin/tasks') }}">
+                        <i class="fa fa-tasks"></i> <span>Tasks</span>
+                    </a>
+                </li>
+            @endif
+
+            @if(user_can('list_emails') || user_can('compose_email'))
+                <li class="treeview {{ Request::segment(2) == 'mailbox' || strpos(Request::segment(2), "mailbox")!==FALSE? 'active':'' }}">
+                    <a href="#">
+                        <i class="fa fa-envelope"></i> <span>Mailbox</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        @if(user_can('list_emails'))
+                            <li class="{{ Request::segment(2) == "mailbox" || Request::segment(3)=="" || Request::segment(3)=="Inbox"?"active":"" }}">
+                                <a href="{{ url('/admin/mailbox') }}">
+                                    Inbox
+                                    @if(count(getUnreadMessages()) > 0)
+                                        <span class="pull-right-container">
+                                            <span class="label label-primary pull-right">{{count(getUnreadMessages())}}</span>
+                                        </span>
+                                    @endif
+                                </a>
+                            </li>
+                        @endif
+                        @if(user_can('compose_email'))
+                            <li class="{{ Request::segment(2) == "mailbox-create"?"active":"" }}">
+                                <a href="{{ url('/admin/mailbox-create') }}">
+                                    Compose
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </li>
+            @endif
+
             @if(\Auth::user()->is_admin == 1)
                 <li class="{{ in_array(Request::segment(2), ['users', 'permissions', 'roles'])?"active":"" }} treeview">
                     <a href="#">

@@ -26,7 +26,25 @@
         Route::resource('/contacts', 'App\Http\Controllers\ContactsController');
         Route::get('/contacts/{id}/assign', 'App\Http\Controllers\ContactsController@getAssignContact');
         Route::put('/contacts/{id}/assign', 'App\Http\Controllers\ContactsController@postAssignContact');
+        Route::get('/api/contacts/get-contacts-by-status', 'App\Http\Controllers\ContactsController@getContactsByStatus');
 
+        Route::resource('/tasks', 'App\Http\Controllers\TasksController');
+        Route::get('/tasks/{id}/assign', 'App\Http\Controllers\TasksController@getAssignTask');
+        Route::put('/tasks/{id}/assign', 'App\Http\Controllers\TasksController@postAssignTask');
+        Route::get('/tasks/{id}/update-status', 'App\Http\Controllers\TasksController@getUpdateStatus');
+        Route::put('/tasks/{id}/update-status', 'App\Http\Controllers\TasksController@postUpdateStatus');
+
+        Route::get('/mailbox/{folder?}', 'App\Http\Controllers\MailboxController@index');
+        Route::get('/mailbox-create', 'App\Http\Controllers\MailboxController@create');
+        Route::post('/mailbox-create', 'App\Http\Controllers\MailboxController@store');
+        Route::get('/mailbox-show/{id}', 'App\Http\Controllers\MailboxController@show');
+        Route::put('/mailbox-toggle-important', 'App\Http\Controllers\MailboxController@toggleImportant');
+        Route::delete('/mailbox-trash', 'App\Http\Controllers\MailboxController@trash');
+        Route::get('/mailbox-reply/{id}', 'App\Http\Controllers\MailboxController@getReply');
+        Route::post('/mailbox-reply/{id}', 'App\Http\Controllers\MailboxController@postReply');
+        Route::get('/mailbox-forward/{id}', 'App\Http\Controllers\MailboxController@getForward');
+        Route::post('/mailbox-forward/{id}', 'App\Http\Controllers\MailboxController@postForward');
+        Route::get('/mailbox-send/{id}', 'App\Http\Controllers\MailboxController@send');
 
         Route::get('/forbidden', function () {
             return view('pages.forbidden.forbidden_area');
