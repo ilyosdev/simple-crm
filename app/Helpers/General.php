@@ -1,6 +1,8 @@
 <?php
 
+    use App\Models\Contact;
     use App\Models\Setting;
+    use App\User;
 
     /**
      * upload file
@@ -116,4 +118,32 @@
             ->select(["*", "mailbox.id as id"])
             ->get();
         return $messages;
+    }
+
+    /**
+     * getContacts
+     *
+     *
+     * @param null $status
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    function getContacts($status = null)
+    {
+        if (!$status)
+            return Contact::all();
+
+        return Contact::join('contact_status', 'contact_status.id', '=', 'contact.status')
+            ->where('contact_status.name', $status)
+            ->get();
+    }
+
+    /**
+     * get Users
+     *
+     *
+     * @return mixed
+     */
+    function getUsers()
+    {
+        return User::where('is_admin', 0)->where('is_active', 1)->get();
     }
