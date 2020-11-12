@@ -19,6 +19,10 @@
         Route::get('/users/role/{id}', 'App\Http\Controllers\UsersController@getRole');
         Route::put('/users/role/{id}', 'App\Http\Controllers\UsersController@updateRole');
 
+        Route::resource('/documents', 'App\Http\Controllers\DocumentsController');
+        Route::get('/documents/{id}/assign', 'App\Http\Controllers\DocumentsController@getAssignDocument');
+        Route::put('/documents/{id}/assign', 'App\Http\Controllers\DocumentsController@postAssignDocument');
+
         Route::get('/forbidden', function () {
             return view('pages.forbidden.forbidden_area');
         });

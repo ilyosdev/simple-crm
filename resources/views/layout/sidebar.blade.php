@@ -24,10 +24,18 @@
                 </a>
             </li>
 
+            @if(user_can('list_documents'))
+                <li class="{{ Request::segment(2) == "documents"?"active":"" }}">
+                    <a href="{{ url('/admin/documents') }}">
+                        <i class="fa fa-file-word-o"></i> <span>Documents</span>
+                    </a>
+                </li>
+            @endif
+
             @if(\Auth::user()->is_admin == 1)
                 <li class="{{ in_array(Request::segment(2), ['users', 'permissions', 'roles'])?"active":"" }} treeview">
                     <a href="#">
-                        <i class="fa fa-users"></i> <span>User Management</span>
+                        <i class="fa fa-users"></i> <span>User Managment</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>

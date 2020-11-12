@@ -44,6 +44,35 @@
 
                                 </tbody>
                             </table>
+
+                            <hr/>
+
+                            @if(user_can('list_documents'))
+                                <h3>Documents assigned</h3>
+                                @if($user->documents->count() > 0)
+                                    <table class="table">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>View</th>
+                                        </tr>
+                                        <tbody>
+                                        @foreach($user->documents as $document)
+                                            <tr>
+                                                <td>{{ $document->name }}</td>
+                                                <td>
+                                                    @if(user_can("view_document"))
+                                                        <a href="{{ url('/admin/documents/' . $document->id) }}"><i class="fa fa-camera"></i></a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                @else
+                                    <p>No documents assigned</p>
+                                @endif
+                            @endif
+
                         </div>
 
                     </div>
