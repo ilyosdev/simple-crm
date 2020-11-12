@@ -23,6 +23,11 @@
         Route::get('/documents/{id}/assign', 'App\Http\Controllers\DocumentsController@getAssignDocument');
         Route::put('/documents/{id}/assign', 'App\Http\Controllers\DocumentsController@postAssignDocument');
 
+        Route::resource('/contacts', 'App\Http\Controllers\ContactsController');
+        Route::get('/contacts/{id}/assign', 'App\Http\Controllers\ContactsController@getAssignContact');
+        Route::put('/contacts/{id}/assign', 'App\Http\Controllers\ContactsController@postAssignContact');
+
+
         Route::get('/forbidden', function () {
             return view('pages.forbidden.forbidden_area');
         });
