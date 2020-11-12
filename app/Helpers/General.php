@@ -2,7 +2,7 @@
 
     use App\Models\Contact;
     use App\Models\Setting;
-    use App\User;
+    use App\Models\User;
 
     /**
      * upload file
